@@ -1,0 +1,106 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+button, input[type="submit"] {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button-secondary {
+    background-color: #2196F3;
+    color: white;
+}
+
+.button-warning {
+    background-color: #FF9800;
+    color: white;
+}
+
+.button-danger {
+    background-color: #F44336;
+    color: white;
+}
+
+button:hover, input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.book-info {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.free-book {
+    background: #e3fcef;
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.assigned-book {
+    background: #fff4e5;
+    padding: 10px;
+    border: 1px solid #FF9800;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.actions {
+    text-align: center;
+}

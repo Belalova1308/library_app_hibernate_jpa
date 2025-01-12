@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update book</title>
+    <link th:href="@{/css/edit.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Редактировать книгу</h1>
+    <form th:method="PATCH" th:action="@{/books/{id}(id=${book.getId()})}" th:object="${book}">
+        <div class="form-group">
+            <label for="name">Введите название книги:</label>
+            <input type="text" th:field="*{name}" id="name" />
+            <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        </div>
+        <div class="form-group">
+            <label for="author">Введите автора:</label>
+            <input type="text" th:field="*{author}" id="author" />
+            <div class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></div>
+        </div>
+        <div class="form-group">
+            <label for="year">Введите год:</label>
+            <input type="text" th:field="*{year}" id="year" />
+            <div class="error" th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></div>
+        </div>
+        <div class="form-actions">
+            <input class="button-primary" type="submit" value="Редактировать!">
+        </div>
+    </form>
+</div>
+</body>
+</html>

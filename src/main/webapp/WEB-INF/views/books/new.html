@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New book</title>
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Добавить книгу</h1>
+    <form th:action="@{/books}" th:method="POST" th:object="${book}">
+        <div class="form-group">
+        <label for="name">Введите название книги: </label>
+        <input id="name" th:field="*{name}" type="text"/>
+        <div style="color: red" th:errors="*{name}" th:if="${#fields.hasErrors('name')}"></div>
+</div>
+        <div class="form-group">
+            <label for="author">Введите автора: </label>
+            <input id="author" th:field="*{author}" type="text"/>
+            <div style="color: red" th:errors="*{author}" th:if="${#fields.hasErrors('author')}"></div>
+        </div>
+        <div class="form-group">
+            <label for="year">Введите год: </label>
+            <input id="year" th:field="*{year}" type="text"/>
+            <div style="color: red" th:errors="*{year}" th:if="${#fields.hasErrors('year')}"></div>
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="Создать!" class="button-primary">
+        </div>
+    </form>
+</div>
+</body>
+</html>

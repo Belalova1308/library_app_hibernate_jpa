@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/list.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Список книг</h1>
+    <ul class="people-list" th:each="book : ${bookPage.content}">
+        <li class="person-item">
+            <a class="person-link" th:href="@{/books/{id}(id=${book.getId()})}"
+               th:text="${book.getName() + ', ' + book.getYear()}"></a>
+        </li>
+    </ul>
+    <div class="pagination">
+        <a class="prev-button"
+           th:href="@{/books(page=${currentPage - 1}, size=${bookPage.size})}" th:if="${currentPage > 1}">предыдущая</a>
+
+        <span th:text="${currentPage}"></span> из <span th:text="${totalPages}"></span>
+
+        <a class="next-button"
+           th:href="@{/books(page=${currentPage + 1}, size=${bookPage.size})}" th:if="${currentPage < totalPages}">следующая</a>
+    </div>
+    <hr/>
+    <a class="create-link" th:href="@{/books/new}">Создать книгу</a>
+    <a class="create-link" th:href="@{/people}">Список людей</a>
+    </ul>
+</div>
+</body>
+</html>

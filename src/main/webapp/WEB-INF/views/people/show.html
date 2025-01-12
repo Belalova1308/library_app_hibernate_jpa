@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>человек</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Информация о человеке</h1>
+    <p th:text="${person.getName() + ', ' + person.getBirthyear()}"></p>
+    <div th:if="${!hasBooks}">
+        <p>Человек пока не взял ни одной книги</p>
+    </div>
+    <div th:if="${hasBooks}">
+        <hr/>
+        <p style="font-weight: bold">Книги:</p>
+        <div th:each="book : ${personBooks}">
+            <p th:style="${book.getExpired() ? 'color:red;' : ''}"
+               th:text="${book.getName() + ', ' + book.getAuthor() + ', ' + book.getYear()}"></p>
+
+        </div>
+    </div>
+    <hr/>
+    <div class="actions">
+        <form th:action="@{/people/{id}/edit(id=${person.getId()})}" th:method="GET">
+            <button class="button-secondary" type="submit">Редактировать</button>
+        </form>
+        <br/>
+
+        <form th:action="@{/people/{id}(id=${person.getId()})}" th:method="DELETE">
+            <input class="button-danger" type="submit" value="Удалить"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
