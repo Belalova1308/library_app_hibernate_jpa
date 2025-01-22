@@ -5,4 +5,4 @@ hibernate.connection.password=
 
 hibernate.dialect=
 hibernate.show_sql=
-#hibernate.current_session_context_class=thread
+#hibernate.current_session_context_class=
