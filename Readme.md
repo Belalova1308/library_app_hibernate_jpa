@@ -13,7 +13,7 @@
 
 1. Настройка конфигурации базы данных
 
-**Скопировуйте файл `hibernate.properties.example` в новый файл: с именем `hibernate.properties`**
+**Скопируйте файл `hibernate.properties.example` в новый файл: с именем `hibernate.properties`**
 
 2. Таблицы для БД
 
